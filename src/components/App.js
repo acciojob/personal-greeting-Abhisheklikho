@@ -10,7 +10,7 @@ function Greeting() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setGreeting(`Hello, ${name}!`);
+    setGreeting(`Hello ${name}!`);
     setName('');
   };
 
