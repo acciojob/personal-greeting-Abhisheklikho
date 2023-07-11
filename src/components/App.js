@@ -23,7 +23,7 @@ function Greeting() {
         </label>
         <button type="submit">Submit</button>
       </form>
-      <h1>{greeting}</h1>
+      <p>{greeting}</p>
     </div>
   );
 }
