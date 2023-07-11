@@ -1,13 +1,31 @@
+import React, { useState } from 'react';
 
-import React from "react";
-import './../styles/App.css';
+function Greeting() {
+  const [name, setName] = useState('');
+  const [greeting, setGreeting] = useState('');
 
-const App = () => {
+  const handleChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setGreeting(`Hello, ${name}!`);
+    setName('');
+  };
+
   return (
     <div>
-        {/* Do not remove the main div */}
+      <form onSubmit={handleSubmit}>
+        <label>
+          Enter your name:
+          <input type="text" value={name} onChange={handleChange} />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+      <h1>{greeting}</h1>
     </div>
-  )
+  );
 }
 
-export default App
+export default Greeting;
